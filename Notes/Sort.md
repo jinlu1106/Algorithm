@@ -247,6 +247,29 @@ void QuickSort(int A[], int left, int right)
     QuickSort(A, pivot_index + 1, right);
 }
 ```
+```Java
+//Java代码
+void sort(int[] a,int left,int right){
+        if (left < right){
+            int i = left;
+            int j = right;
+            int key = a[i];
+            while(i < j){
+                while(i < j && a[j] >= key){
+                    j--;
+                }
+                a[i] = a[j];
+                while(i < j && a[i] <= key){
+                    i++;
+                }
+                a[j] = a[i];
+            }
+            a[i] = key;
+            sort(a,left,i - 1);
+            sort(a,i+1,right);
+        }
+    }
+```
 + 实现过程：
 
   ![10](../Picture/Sort/10.gif)
